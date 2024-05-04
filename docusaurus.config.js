@@ -12,12 +12,13 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.js',
         },
-
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
