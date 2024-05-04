@@ -12,7 +12,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   wikiSidebar: [
-    'intro',
+    'home',
     {
       type: 'category',
       label: 'Modules',
