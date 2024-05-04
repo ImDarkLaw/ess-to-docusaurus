@@ -29,8 +29,30 @@ const sidebars = {
           'modules/xmpp'
 
       ]
-
     },
+      {
+          type: 'category',
+          label: 'External Links',
+          collapsed: true,
+          items: [
+              {
+                  type: 'link',
+                  label: 'Command List (Unofficial)',
+                  href: 'https://essinfo.xeya.me/commands.html',
+              },
+              {
+                  type: 'link',
+                  label: 'Permission List (Unofficial)',
+                  href: 'https://essinfo.xeya.me/permissions.html',
+              },
+              {
+                  type: 'link',
+                  label: 'Changelogs',
+                  href: 'https://github.com/EssentialsX/Essentials/releases',
+              },
+
+          ]
+      },
   ],
 };
 
