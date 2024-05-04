@@ -3,7 +3,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'EssentialsX',
   tagline: 'The essential plugin suite for Minecraft servers, with over 130 commands for servers of all size and scale.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/branding/favicon.ico',
   url: 'https://essentialsx.net/',
   baseUrl: '/',
 
