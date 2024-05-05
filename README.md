@@ -1,41 +1,34 @@
-# Website
+<div align="center">
+<!-- Header -->
+  <h1>EssentialsX Documentation But Improved (WIP)</h1>
+<!-- Shields.io  Badges -->
+  <img src="https://img.shields.io/github/last-commit/Evidentsinger14/ess-to-docusaurus" alt="lastcommit">
+  <img src="https://img.shields.io/github/stars/Evidentsinger14/ess-to-docusaurus" alt="stars">
+  <br><br>
+  <img src="https://camo.githubusercontent.com/949f7477d984c3a7fddc5112a3012222b46e0a464fdc5939db81c61441165f60/68747470733a2f2f692e696d6775722e636f6d2f435034535a70422e706e67" alt="LogoBanner">
+</div><br>
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+The improved and currently WIP documentation for EssentialsX, built with [Docusaurus](https://github.com/facebook/docusaurus)!
 
-### Installation
+## About
 
-```
-$ yarn
-```
+The goal of this repository is to provide comprehensive and concise documentation for EssentialsX.
 
-### Local Development
+## Contributing (demo)
 
-```
-$ yarn start
-```
+Contributions are welcome to help improve and expand the documentation. Whether you're fixing typos, clarifying instructions, adding new features, or updating existing content, your contributions are valuable and appreciated.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+To contribute to the docs, follow these steps:
 
-### Build
+1. Fork this repository.
+2. To be added later.
+3.
 
-```
-$ yarn build
-```
+For further info, see [contributing info](CONTRIBUTING.md) (coming soon).
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## License
 
-### Deployment
+This project is licensed under the {some license here} blah blah.
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+> [!NOTE]\
+>  Documentation overhaul is a work in progress and currently incomplete.
