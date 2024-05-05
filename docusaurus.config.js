@@ -41,17 +41,11 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'wikiSidebar',
-            position: 'left',
-            label: 'Wiki',
-          },
-          {
             href: 'https://discord.gg/h8CnPSw',
             label: 'Discord Support',
             position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/EssentialsX/',
             label: 'GitHub',
             position: 'right',
           },
