@@ -1,0 +1,75 @@
+---
+title: Chat
+---
+
+:::note
+This addon requires you to have a matching version of EssentialsX installed.
+You may also need [Vault](https://github.com/milkbowl/Vault) if you wish to get prefixes or suffixes from external plugins
+:::
+
+
+EssentialsX Chat is a basic chat formatting addon for EssentialsX.
+
+
+# Configuration
+You can access the EssentialsChat configuration by opening `/plugins/Essentials/config.yml`, and scrolling down until you see the section marked "EssentialsX Chat"
+
+```yaml
+chat:
+  radius: 0
+```
+In Vanilla Minecraft, all players can see all other player messages. This setting will change the number of blocks (In a radius) the message can be viewed from.
+
+```yaml
+  format: '<{DISPLAYNAME}> {MESSAGE}'
+  #format: '&7[{GROUP}]&r {DISPLAYNAME}&7:&r {MESSAGE}'
+  #format: '&7{PREFIX}&r {DISPLAYNAME}&r &7{SUFFIX}&r: {MESSAGE}'
+```
+These are the configurations for a global chat format. This is how your chat messages will be displayed when a player types in the server chat.
+
+```yaml
+  group-formats:
+  #  default: '{WORLDNAME} {DISPLAYNAME}&7:&r {MESSAGE}'
+  #  admins: '{WORLDNAME} &c[{GROUP}]&r {DISPLAYNAME}&7:&c {MESSAGE}'
+```
+You can set formats per group in EssentialsX Chat. make sure that the name you use in this section matches exactly what you have in your permission manager
+:::important
+If you have a group displayname set in LuckPerms, use that instead of the group name itself
+:::
+
+```yaml
+  world-aliases:
+  #  plots: "&dP&r"
+  #  creative: "&eC&r"
+```
+With world aliases, you are able to set custom text that is displayed in chat when using the `{WORLD}` keyword.
+
+```yaml
+  shout-default: false
+```
+Whether players should be placed into shout mode by default.
+
+```yaml
+  persist-shout: false
+```
+Whether a player's shout mode should persist restarts.
+
+```yaml
+  question-enabled: true
+```
+Whether chat questions should be enabled or not.
+<br></br>
+
+# __Frequently Asked Questions__
+Q: Does EssentialsX Chat support PlaceholderAPI?
+
+A: No, but that is something we plan to support in the future!
+
+___
+
+Q: Why is my prefix, username and suffix all pushed together with no spaces.
+
+A: By default, the `{DISPLAYNAME}` keyword combines your Prefix, Username/Nickname, and Suffix together as it is received from Vault.
+To get around this, you may have to change your chat format to use the keywords of your choice, uncomment `add-prefix-suffix`, and set it to false.
+
+___
