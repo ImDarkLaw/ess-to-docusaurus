@@ -13,50 +13,50 @@ EssentialsX Chat is a basic chat formatting addon for EssentialsX.
 ## Configuration
 You can access the EssentialsChat configuration by opening `/plugins/Essentials/config.yml`, and scrolling down until you see the section marked "EssentialsX Chat"
 
+In Vanilla Minecraft, all players can see all other player messages. This setting will change the number of blocks (In a radius) the message can be viewed from.
 ```yaml
 chat:
   radius: 0
 ```
-In Vanilla Minecraft, all players can see all other player messages. This setting will change the number of blocks (In a radius) the message can be viewed from.
 
+These are the configurations for a global chat format. This is how your chat messages will be displayed when a player types in the server chat.
 ```yaml
   format: '<{DISPLAYNAME}> {MESSAGE}'
   #format: '&7[{GROUP}]&r {DISPLAYNAME}&7:&r {MESSAGE}'
   #format: '&7{PREFIX}&r {DISPLAYNAME}&r &7{SUFFIX}&r: {MESSAGE}'
 ```
-These are the configurations for a global chat format. This is how your chat messages will be displayed when a player types in the server chat.
 
+You can set formats per group in EssentialsX Chat. make sure that the name you use in this section matches exactly what you have in your permission manager
 ```yaml
   group-formats:
   #  default: '{WORLDNAME} {DISPLAYNAME}&7:&r {MESSAGE}'
   #  admins: '{WORLDNAME} &c[{GROUP}]&r {DISPLAYNAME}&7:&c {MESSAGE}'
 ```
-You can set formats per group in EssentialsX Chat. make sure that the name you use in this section matches exactly what you have in your permission manager
 :::important
 If you have a group displayname set in LuckPerms, use that instead of the group name itself
 :::
 
+With world aliases, you are able to set custom text that is displayed in chat when using the `{WORLD}` keyword.
 ```yaml
   world-aliases:
   #  plots: "&dP&r"
   #  creative: "&eC&r"
 ```
-With world aliases, you are able to set custom text that is displayed in chat when using the `{WORLD}` keyword.
 
+Whether players should be placed into shout mode by default.
 ```yaml
   shout-default: false
 ```
-Whether players should be placed into shout mode by default.
 
+Whether a player's shout mode should persist restarts.
 ```yaml
   persist-shout: false
 ```
-Whether a player's shout mode should persist restarts.
 
+Whether chat questions should be enabled or not.
 ```yaml
   question-enabled: true
 ```
-Whether chat questions should be enabled or not.
 
 ## __Frequently Asked Questions__
 Q: Does EssentialsX Chat support PlaceholderAPI?
