@@ -6,4 +6,83 @@ title: Spawn
 This addon requires you to have a matching version of EssentialsX installed.
 :::
 
-## Frequently Asked Questions
+:::note
+[Vault](https://github.com/milkbowl/Vault) is required for any group related functionalities documented below.
+:::
+
+EssentialsX Spawn lets you control where players spawn both when they first join the server and when they die.
+You can use the in-game `/setspawn` command to set a spawn location for everyone on your server as well as for specific groups.
+
+## Configuration
+You can access the EssentialsSpawn configuration by opening `/plugins/Essentials/config.yml`, and navigate to the section labeled "EssentialsX Spawn".
+
+These are the settings for first time joining players.
+This setting controls the message that will be announced to the server when someone logs in for the first time.
+Set `announce-format: ''` to disable.
+```yaml
+newbies:
+  announce-format: '&dWelcome {DISPLAYNAME}&d to the server!'
+```
+This setting controls the spawnpoint users will be placed to when they join for the first time. Set `spawnpoint: "none"` if you'd like to use the spawn point of the world.
+```yaml
+  spawnpoint: newbies
+```
+You can give users a kit on first join. This kit will be given regardless of cost and permissions, and will not trigger the kit delay.
+Set `kit: ''` to disable.
+```yaml
+  kit: tools
+```
+What priority should we use for handling respawns? Changes will not apply until after the server is restarted.
+Accepts the following values:
+- `none`: use vanilla respawning behaviour.
+- `lowest`: allow Multiverse to handle the respawning.
+- `high`: allow EssentialsSpawn to handle the respawning.
+- `highest`: force EssentialsSpawn to handle the respawning.
+```yaml
+respawn-listener-priority: high
+```
+What priority should we use for handling spawning on joining the server? Changing this may impact or break
+`spawn-on-join` functionality. Changes will not apply until after the server is restarted.
+Accepts the same values as `respawn-listener-priority` above.
+```yaml
+spawn-join-listener-priority: high
+```
+
+When users die, should they respawn at their first home or bed instead of the spawnpoint?
+```yaml
+respawn-at-home: false
+```
+When users die, should they respawn at their bed instead of the spawnpoint? The value of `respawn-at-home` has to be true.
+```yaml
+respawn-at-home-bed: true
+```
+When users die, should EssentialsSpawn respect users' respawn anchors?
+```yaml
+respawn-at-anchor: false
+```
+
+Force joining players to be teleported to the spawnpoint. This setting also accepts Vault group values, or a list of group values.
+
+Users can be exempt from being teleported to spawn on join with the `essentials.spawn-on-join.exempt` permission.
+```yaml
+spawn-on-join: false
+# All players in group `guests` will be teleported to spawn when joining the server.
+#spawn-on-join: guests
+# All players in group `guests` and `admin` are to be teleported to spawn when joining.
+#spawn-on-join:
+#- guests
+#- admin
+```
+
+## Configuring Group Spawns
+
+EssentialsSpawn allows you to create spawnpoints on a per-group basis using the `/setspawn <group>` command. The
+`/setspawn <group>` command sets your current position as the spawn point for the specified Vault group.
+
+Example: `/setspawn vip` will set your current position as the spawn point for the "vip" Vault group.
+
+:::note
+[Vault](https://github.com/milkbowl/Vault), and a Vault supported permission manager are required for this.
+:::
+
+
