@@ -32,7 +32,7 @@ const sidebars = {
         {
             type: 'category',
             label: 'Tutorials',
-            collapsed: false,
+            collapsed: true,
             items: [
                 'tutorials/discordtut',
                 'tutorials/discordlinktut'
