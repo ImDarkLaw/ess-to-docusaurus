@@ -43,7 +43,13 @@ const config = {
           {
             href: 'https://discord.gg/h8CnPSw',
             label: 'Discord Support',
-            position: 'left'},
+            position: 'left'
+          },
+          {
+            href: 'https://essentialsx.net/downloads.html',
+            label: 'Downloads',
+            position: 'right',
+          },
           {
             href: 'https://github.com/EssentialsX/',
             label: 'GitHub',
