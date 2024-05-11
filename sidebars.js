@@ -13,6 +13,7 @@
 const sidebars = {
     wikiSidebar: [
         'home',
+        'installation',
         {
             type: 'category',
             label: 'Modules',

@@ -1,0 +1,82 @@
+---
+sidebar_position: 2
+title: Installation
+---
+
+# Installation
+This guide will walk you through the process of installing and updating EssentialsX, as well as, list the supported
+server platforms and versions.
+
+EssentialsX is split up into several separate plugins. The only jar that is necessary for EssentialsX to work is the
+main EssentialsX jar, which contains most of the core features most servers will need. The other modules are optional -
+see the modules category on the sidebar in the left-hand side for more information on what each module does.
+
+Below are the steps you need to follow to start using the plugin:
+
+### Step 1: Use a supported server platform and version
+EssentialsX is based on Bukkit and we recommend running it on [Paper](https://papermc.io/software/paper).
+See [here](#Supported-Server-Versions-and-Software) for further info.
+
+### Step 2: Download the EssentialsX jar file
+The first thing you will need to do is download the core EssentialsX plugin. You can find the latest version of
+EssentialsX on our [downloads page](https://essentialsx.net/downloads.html).
+
+### Step 3: Add the EssentialsX jar to your plugins folder
+Once you've decided which EssentialsX modules you need, copy the required .jar files into the `plugins/` directory.
+
+### Step 4: Restart your server
+Once you've installed all the plugins you need, restart your server. EssentialsX will create configuration files
+(and upgrade old Essentials data if needed) when it starts up.
+
+:::tip
+As your server restarts, you can monitor the console to make sure EssentialsX and any of its modules start up and enable
+correctly.
+:::
+
+### Step 5: That's it!
+EssentialsX is now installed, and you can start using it right away! Move onto the [EssentialsX Core](modules/core)
+page of the wiki on how to configure the plugin!
+
+## Updating EssentialsX
+Updating EssentialsX is extremely easy. To do this, stop your server and replace your EssentialsX jar files with
+updated ones from the [downloads page](https://essentialsx.net/downloads.html). Your configuration files will be unmodified.
+
+:::info
+To update the modules, ensure they match version with the core EssentialsX plugin.
+
+To update the config, either generate a new one or copy https://git.io/JG4z1, your old config, and paste them at
+https://www.diffchecker.com/ to compare the differences.
+:::note Getting "unknown items" issues on newer versions?
+If you're upgrading server versions, ensure you delete the `items.json` (or `items.csv`) file in
+your Essentials folder while the server is stopped.
+:::
+
+## Supported Server Versions and Software
+
+EssentialsX officially supports [Paper](https://papermc.io/software/paper) (recommended) and [Spigot](https://www.spigotmc.org/) servers
+running the following server versions:
+
+- 1.20.4 and 1.19.4 - EssentialsX actively develops against and supports these versions.
+- 1.8.8 → 1.18.2 - these versions are still
+supported, but are not a priority for us, and may be dropped in a future release.
+
+:::danger EssentialsX does not support the following Minecraft versions and server software:
+
+- [Folia](https://papermc.io/software/folia) is not supported yet. Do not attempt to use current versions of
+EssentialsX on Folia or forks of it - you may lose userdata.
+- "Ultra-performance" Paper forks (Akarin, Yatopia, etc.). These often perform non-standard behavior and can break your
+worlds and installed plugins.
+- Forge/Bukkit hybrid servers including Mohist, Arclight, Magma, Cauldron, Thermos, CatServer, etc. EssentialsX is
+built for the Bukkit API, which does not properly support mods.
+- 1.7.10 or below
+:::
+
+## Frequently Asked Questions
+Q: What's the difference between Stable and Development builds? Which should I download?
+
+A: Stable releases undergo extensive testing and are generally more reliable. They are recommended for production
+environments. Development builds, on the other hand, contain the latest features and bug fixes and may have not been
+heavily tested. They are best suited for users who want to try out new features and bug fixes or contribute to testing
+and feedback.
+
+---
