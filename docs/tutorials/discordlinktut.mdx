@@ -1,0 +1,56 @@
+---
+title: Discord Link Tutorials
+---
+
+## Setting Up Role Sync
+
+In EssentialsX Discord Link, you can define a synchronizations for both Vault groups -> Discord roles and for
+Discord roles -> Vault groups.
+
+The following tutorial (as an example) will show how to give players with the Discord role `Patreon` the `donator`
+Vault group and how to give players with the `vip` Vault group the `VIP` Discord role.
+
+1. First, head to your server's role page in order to get their IDs.
+
+2. For both the `Patreon` and `VIP` roles, right click them and click on "Copy ID".
+   > ![Copy Role ID](https://i.imgur.com/YS9P2ej.gif)
+   > Right Click on Role(s) -> `Copy ID` -> Paste into Notepad for later step
+
+3. Now that you have the IDs you need from Discord, you can begin configuring the plugin.
+   First place the
+EssentialsX Discord Link jar (you can download it [here](https://essentialsx.net/downloads.html) if you do not
+already have it) in your plugins folder and then start your server.
+   > ![Start Server](https://i.imgur.com/64IwqoO.gif)
+   > Drag EssentialsXDiscordLink jar into plugins folder -> Start Server
+
+4. Once the server started, open the config for EssentialsX Discord Link at
+`plugins/EssentialsDiscordLink/config.yml`.
+   Once opened, put `group-name: role-id` in the `groups` section
+to create a Vault group -> Discord role synchronization (`vip: 882835722640433242` for this example).
+   Then, put
+`role-id: group-name` in the `roles` section to create a Discord role -> Vault group synchronization
+(`882835662280224818: donator` for this example).
+   When done, save the file.
+   > ![Paste Synchronizations](https://i.imgur.com/JYZHzW0.gif)
+   > Paste Vault->Discord syncs in the group section & Discord->Vault syncs in the roles section
+
+5. Finally, once the file is saved, run `ess reload` from your console and then linked accounts should now have
+their groups/roles linked between Minecraft/Discord! Now that you completed the basics of group/role syncing,
+go back up to the [EssentialsDiscordLink documentation](../../modules/discordlink) to see what else you can do!
+
+---
+
+## Linking an Account
+
+1. This assumes the server has started and you have joined the server.
+
+2. Once on the server, run `/link` in Minecraft and take note of the code if gives you.
+   > ![Run /link](https://i.imgur.com/1EdqdOa.gif)
+
+3. Next, all you have to do is run the `/link` command in discord with the code provided.
+   > ![Run /link in Discord](https://i.imgur.com/yXkvMDX.gif)
+
+4. That's it! Now that you've learned how to link an account, go back up to the
+[Discord Link Docs](../../modules/discordlink) to see what else you can do!
+
+---
