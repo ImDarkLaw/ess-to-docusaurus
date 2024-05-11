@@ -20,6 +20,10 @@ EssentialsX Discord Link offers features such as:
 - Prevent unlinked players from moving/chatting
 - …and more
 
+:::tip
+Just installed EssentialsDiscordLink? Check out our comprehensive [tutorial](../../tutorials/discordlinktut) for step-by-step instructions on getting the plugin up and running smoothly!
+:::
+
 ## Configuration
 You can access the EssentialsDiscordLink configuration by opening `/plugins/EssentialsDiscordLink/config.yml`.
 
@@ -95,3 +99,35 @@ their Discord account to their Minecraft account.
     33333333333333333: booster
 ```
 
+---
+
+## Developer API
+
+EssentialsX Discord Link has a simple API to provide very simple methods to check if players are linked,
+link players, unlink players, and to get linked player data.
+
+Outside the specific examples below, you can also view javadocs for EssentialsX Discord Link
+[here](https://jd-v2.essentialsx.net/EssentialsDiscordLink).
+
+### Get a linked player's Discord tag
+
+The following example shows how to get a linked player's Discord tag (in `Name#0000` format) or null if the player
+isn't linked.
+
+```java
+public String getDiscordTag(final Player player) {
+    // Gets the API service for EssentialsX Discord Link
+    final DiscordLinkService linkApi = Bukkit.getServicesManager().load(DiscordLinkService.class);
+
+    final String discordId = linkApi.getDiscordId(player.getUniqueId());
+    if (discordId == null) {
+        return null;
+    }
+
+    // Gets the API service for EssentialsX Discord which we will use to get the actual user
+    final DiscordService discordApi = Bukkit.getServicesManager().load(DiscordService.class);
+
+    final InteractionMember member = discordApi.getMemberById(discordId).join();
+    return member == null ? null : member.getTag();
+}
+```
