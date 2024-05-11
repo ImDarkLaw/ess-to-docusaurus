@@ -1,9 +1,8 @@
 ---
 title: Chat
 ---
-:::note
+:::warning
 This addon requires you to have a matching version of EssentialsX installed.
-You may also need [Vault](https://github.com/milkbowl/Vault) if you wish to get prefixes or suffixes from external plugins
 :::
 
 
@@ -18,6 +17,10 @@ In Vanilla Minecraft, all players can see all other player messages. This settin
 chat:
   radius: 0
 ```
+
+:::note
+[Vault](https://github.com/milkbowl/Vault) is required if you wish to retrieve prefixes or suffixes from a permission manager, or use group based formatting.
+:::
 
 These are the configurations for a global chat format. This is how your chat messages will be displayed when a player types in the server chat.
 ```yaml
@@ -69,5 +72,11 @@ Q: Why is my prefix, username and suffix all pushed together with no spaces.
 
 A: By default, the `{DISPLAYNAME}` keyword combines your Prefix, Username/Nickname, and Suffix together as it is received from Vault.
 To get around this, you may have to change your chat format to use the keywords of your choice, uncomment `add-prefix-suffix`, and set it to false.
+
+___
+
+Q: Why is am I seeing double prefixes/suffixes in chat?
+
+A: Using the `{PREFIX}` and/or `{SUFFIX}` keywords along with `{DISPLAYNAME}` may cause double prefixes/suffixes to be shown in chat, unless the `add-prefix-suffix` is uncommented and set to false.
 
 ___

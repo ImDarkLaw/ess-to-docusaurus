@@ -1,0 +1,6 @@
+[build]
+  base = "/"
+  publish = "/build"
+  command = "yarn build"
+[context.production]
+  environment = { NODE_VERSION = "18.20.2" }
