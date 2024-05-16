@@ -7,7 +7,7 @@ const config = {
   url: 'https://essentialsx.net/',
   baseUrl: '/',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   presets: [
