@@ -1,0 +1,59 @@
+---
+title: Home Limits Guide
+---
+
+:::warning Make sure you have a permissions plugin installed
+Before proceeding with this guide, you're required to be using a permission manager. We recommend using
+[LuckPerms](https://luckperms.net/), if you don't have one.
+:::
+
+EssentialsX allows you to manage the maximum number of homes a player can set by defining permissions associated with
+different sethome ranks, also known as *sets*.
+
+<!-- Not a huge fan of how this paragraph turned out. Feel free to propose adjustments. -->
+This is achieved through the `sethome-multiple` setting in the plugin configuration allowing you to create home sets,
+which are essentially key-value pairs, corresponding home groups with their respective home limits.
+
+<!-- The steps approach below is inspired by Jason's original "How to set EssentialsX home limits" guide. Do
+we want to stick with that approach or do something different? -->
+## Steps
+
+1. Open your EssentialsX configuration file `/plugins/Essentials/config.yml` and locate the `sethome-multiple` setting
+under the Homes section.
+
+<!-- We could improve the transition and explanation for this step, as well as for the subsequent ones. -->
+2. Create a name and set a limit for that name. Remember, the name has nothing to do with group names, so it can be
+called whatever you want as long as the permission name matches.
+
+You can define the default amount of homes using the default set below.
+
+:::info
+Grant players unlimited homes by assigning them the `essentials.sethome.multiple.unlimited` permission.
+:::
+```yaml
+sethome-multiple:
+  default: 3
+  vip: 5
+  staff: 10
+```
+
+3. Give the desired group or user the following permission nodes:
+- `essentials.sethome` - Allows access to the /sethome command.
+- `essentials.sethome.multiple` - Allows access to multiple homes.
+- `essentials.sethome.multiple.[set name]` - Raises the home limit to the set value defined in the config.
+
+## Example
+
+```yaml
+sethome-multiple:
+  default: 2
+  regulars: 3
+```
+
+In this example, a player with the `essentials.sethome` and `essentials.sethome.multiple` permissions will be able to
+set up to 2 homes, which is the default value.
+
+A player with the `essentials.sethome`, `essentials.sethome.multiple` and `essentials.sethome.multiple.regulars` permissions
+will be able to set up to 3 homes.
+
+
