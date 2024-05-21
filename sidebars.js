@@ -14,6 +14,7 @@ const sidebars = {
     wikiSidebar: [
         'home',
         'installation',
+        'locale',
         {
             type: 'category',
             label: 'Modules',
