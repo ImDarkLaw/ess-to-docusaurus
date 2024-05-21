@@ -5,14 +5,28 @@ title: Chat
 This addon requires you to have a matching version of EssentialsX installed.
 :::
 
-
-EssentialsX Chat is a basic chat formatting addon for EssentialsX.
-
+EssentialsX Chat is a lightweight chat formatter offering basic features. It allows you to customize chat formatting on
+your server by adding prefixes, suffixes and colors in chat, as well as setting different formats for different groups.
 
 ## Configuration
-You can access the EssentialsChat configuration by opening `/plugins/Essentials/config.yml`, and scrolling down until you see the section marked "EssentialsX Chat"
+You can access the EssentialsChat configuration by opening `/plugins/Essentials/config.yml`, and scrolling down until
+you see the section marked "EssentialsX Chat".
 
-In Vanilla Minecraft, all players can see all other player messages. This setting will change the number of blocks (In a radius) the message can be viewed from.
+In Vanilla Minecraft, all players can see all other player messages. This setting will change the number of blocks (In
+a radius) messages can be viewed from. Set to 0 to make all chat global.
+
+::::note
+Users with the `essentials.chat.spy` permission will hear everything, regardless of this setting.
+
+Users with `essentials.chat.shout` can override this by prefixing their message with an exclamation mark (!).
+
+Users with `essentials.chat.question` can override this by prefixing their message with a question mark (?).
+
+:::info
+You can add command costs for shout/question by adding `chat-shout` and `chat-question` to the command costs section.
+:::
+::::
+
 ```yaml
 chat:
   radius: 0
@@ -22,22 +36,28 @@ chat:
 [Vault](https://github.com/milkbowl/Vault) is required if you wish to retrieve prefixes or suffixes from a permission manager, or use group based formatting.
 :::
 
-These are the configurations for a global chat format. This is how your chat messages will be displayed when a player types in the server chat.
+These configurations define the global chat format, controlling the appearance of chat messages. You can use the
+following placeholders:
+
 ```yaml
   format: '<{DISPLAYNAME}> {MESSAGE}'
   #format: '&7[{GROUP}]&r {DISPLAYNAME}&7:&r {MESSAGE}'
   #format: '&7{PREFIX}&r {DISPLAYNAME}&r &7{SUFFIX}&r: {MESSAGE}'
 ```
 
-You can set formats per group in EssentialsX Chat. make sure that the name you use in this section matches exactly what you have in your permission manager
+EssentialsX Chat allows you to define different chat formats for each group. Ensure that the names you use in this
+section exactly match those in your permission manager.
+
+:::note
+If you have a group displayname set in LuckPerms, use that instead of the group name itself.
+:::
+
 ```yaml
   group-formats:
   #  default: '{WORLDNAME} {DISPLAYNAME}&7:&r {MESSAGE}'
   #  admins: '{WORLDNAME} &c[{GROUP}]&r {DISPLAYNAME}&7:&c {MESSAGE}'
 ```
-:::important
-If you have a group displayname set in LuckPerms, use that instead of the group name itself
-:::
+
 
 With world aliases, you are able to set custom text that is displayed in chat when using the `{WORLD}` keyword.
 ```yaml
@@ -51,7 +71,7 @@ Whether players should be placed into shout mode by default.
   shout-default: false
 ```
 
-Whether a player's shout mode should persist restarts.
+Whether a player's shout mode should persist server restarts.
 ```yaml
   persist-shout: false
 ```
@@ -61,7 +81,74 @@ Whether chat questions should be enabled or not.
   question-enabled: true
 ```
 
-## __Frequently Asked Questions__
+## Supported Color Codes and Placeholders
+
+### Formatting
+
+EssentialsX Chat supports both legacy and RGB color codes.
+
+<details>
+    <summary>
+        Color Codes
+    </summary>
+    <div>
+        <h2>Legacy Color Codes</h2>
+
+        - `&0` - Black <br/>
+        - `&1` - Dark Blue <br/>
+        - `&2` - Dark Green <br/>
+        - `&3` - Dark Aqua <br/>
+        - `&4` - Dark Red <br/>
+        - `&5` - Dark Purple <br/>
+        - `&6` - Gold <br/>
+        - `&7` - Gray <br/>
+        - `&8` - Dark Gray <br/>
+        - `&9` - Blue <br/>
+        - `&a` - Green <br/>
+        - `&b` - Aqua <br/>
+        - `&c` - Red <br/>
+        - `&d` - Light Purple <br/>
+        - `&e` - Yellow <br/>
+        - `&f` - White
+
+        <h2>RGB Color Codes</h2>
+
+        Format: `&#RRGGBB` (Example: `&#00FF00` for bright green)
+
+    </div>
+
+
+</details>
+
+### Placeholders
+
+EssentialsX Chat provides the following built-in placeholders for displaying various elements, like prefixes and
+suffixes.
+
+<details>
+    <summary>
+        Available Placeholders
+    </summary>
+    <div>
+    - `{MESSAGE}` - The content of the chat message.<br/>
+    - `{USERNAME}` - The sender's username.<br/>
+    - `{DISPLAYNAME}` - The sender's display name.<br/>
+    - `{NICKNAME}` - The sender's Essentials nickname. If the sender has no nickname, the username is shown.<br/>
+    - `{PREFIX}` - The sender's prefix, supplied by a permissions plugin.<br/>
+    - `{SUFFIX}` - The sender's suffix, supplied by a permissions plugin.<br/>
+    - `{GROUP}` - The sender's primary group name, supplied by a permissions plugin.<br/>
+    - `{WORLD}` - The world alias of the sender's current world. See the world-aliases section below for details.<br/>
+    - `{WORLDNAME}` - The full name of the sender's current world.<br/>
+    - `{SHORTWORLDNAME}` - The first character of the sender's current world.<br/>
+    - `{TEAMNAME}` - The sender's scoreboard team name.<br/>
+    - `{TEAMPREFIX}` - The sender's scoreboard team prefix.<br/>
+    - `{TEAMSUFFIX}` - The sender's scoreboard team suffix.
+    </div>
+</details>
+
+
+## Frequently Asked Questions
+
 Q: Does EssentialsX Chat support PlaceholderAPI?
 
 A: No, but that is something we plan to support in the future!
