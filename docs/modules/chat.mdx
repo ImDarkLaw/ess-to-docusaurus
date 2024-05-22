@@ -16,7 +16,7 @@ In Vanilla Minecraft, all players can see all other player messages. This settin
 a radius) messages can be viewed from. Set to 0 to make all chat global.
 
 ::::note
-Users with the `essentials.chat.spy` permission will hear everything, regardless of this setting.
+Users with the `essentials.chat.spy` permission will see everything, regardless of this setting.
 
 Users with `essentials.chat.shout` can override this by prefixing their message with an exclamation mark (!).
 
@@ -46,7 +46,7 @@ following placeholders:
 ```
 
 EssentialsX Chat allows you to define different chat formats for each group. Ensure that the names you use in this
-section exactly match those in your permission manager.
+section exactly match those in your permission manager, as they are case-sensitive.
 
 :::note
 If you have a group displayname set in LuckPerms, use that instead of the group name itself.
@@ -71,7 +71,7 @@ Whether players should be placed into shout mode by default.
   shout-default: false
 ```
 
-Whether a player's shout mode should persist server restarts.
+Whether a player's shout mode should persist between server restarts.
 ```yaml
   persist-shout: false
 ```
